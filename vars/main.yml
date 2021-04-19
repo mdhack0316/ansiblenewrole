@@ -1,0 +1,4 @@
+pkg_name: apache2
+svc_name: apache2
+location: /var/www/html
+check: apple 

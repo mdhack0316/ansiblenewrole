@@ -1,0 +1,17 @@
+---
+- name: installing apache
+  apt: 
+   name: "{{ pkg_name }}"
+   state: present
+- name: copying a file from files directory
+  copy: 
+   src: prod.html
+   dest: "{{ location }}/prod.html"
+- name: using template creating index file
+  template: 
+   src: index.html.j2
+   dest: "{{ location }}/index.html"
+- name: starting the service
+  service: 
+   name: "{{ svc_name }}"
+   state: started 
